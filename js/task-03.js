@@ -12,23 +12,55 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-
+  
 const markupParents = document.querySelector(`.gallery`);
-markupParents.style.display = `flex`;
-markupParents.style.gap = `30px`
+ markupParents.style.display = `flex`;
+ markupParents.style.gap = `30px`;
+const elements = [];
+
 
 images.forEach((image) => {
-  const imgEl = `<img src="${image.url}" alt="${image.alt}" />`;
-  const markupEl = `<li>${imgEl}</li>`;
-  markupParents.insertAdjacentHTML('beforeend', markupEl);
+  const imgEl = `<li><img src="${image.url}" alt="${image.alt}"/></li>`;
+  elements.push(imgEl);
 });
- 
- const linkEl = document.querySelectorAll(`.gallery img`);
- const liEl = document.querySelectorAll(`.gallery li`);
- 
 
-linkEl.forEach((link) => {
-  link.style.width = `300px`;
-  link.style.height = `200px`;
-});
+ markupParents.insertAdjacentHTML('beforeend', elements);
+
+  // Чудово що стилі для linkEl можна додати в imgEl, але не зрозуміло як саме, скоріш за все я роблю якусь синтаксичну помилку,
+  // буду вдячний за допомогу
+
+  
+const linkEl = document.querySelectorAll(`.gallery img`);
+
+  linkEl.forEach((link) => {
+   link.style.width = `300px`;
+   link.style.height = `200px`;
+  });
+
+
+
+
+
+
+
+
+
+// const markupParents = document.querySelector(`.gallery`);
+// markupParents.style.display = `flex`;
+// markupParents.style.gap = `30px`;
+
+
+
+// images.forEach((image) => {
+//   const imgEl = `<li><img src="${image.url}" alt="${image.alt}"/></li>`;
+  
+   
+// });
+//  markupParents.insertAdjacentHTML('beforeend', markupEl);
+// const linkEl = document.querySelectorAll(`.gallery img`);
+
+//  linkEl.forEach((link) => {
+//   link.style.width = `300px`;
+//    link.style.height = `200px`;
+//  });
 

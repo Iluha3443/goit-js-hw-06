@@ -6,9 +6,10 @@ const secondInput = valueControl[1];
 formLoginValue.addEventListener('submit', (event) => {
      event.preventDefault();
     if (firstInput.value === ''||secondInput.value === '') {
-         alert(`Для отправки формы обязательно заполнить все поля`)
-    } 
-    
+         alert(`Для отправки формы обязательно заполнить все поля`);
+         return;
+     };
+     
      const { email, password } = event.target.elements;
      const formUser = {
           email: email.value,

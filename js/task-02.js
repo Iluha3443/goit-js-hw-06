@@ -8,23 +8,22 @@ const ingredients = [
 ];
 
 
-const listEl = document.getElementById(`ingredients`)
-// console.log(listEl)
+const listIngridients = document.getElementById(`ingredients`)
 
 
 
 
-const ingredientsMarkup = ingredients.reduce((acc, ingredient) => {
-  const itemEl = document.createElement(`li`);
-  itemEl.textContent = ingredient;
-  itemEl.classList.add('item');
-  listEl.append(itemEl);
+const listElements = [];
   
-  return acc;
+const jkd = ingredients.forEach((ingredient) => {
+  const listEl = document.createElement(`li`);
+  listEl.textContent = ingredient;
+  listEl.classList.add('item');
+  listElements.push(listEl);
+});
 
-}, '');
+ listIngridients.append(...listElements)
   
-
 
 
 
